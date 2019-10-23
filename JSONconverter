@@ -1,0 +1,34 @@
+        # word_dict = dict()
+        # self.add_vector_to_dict(self.class_one_list_vector_form, word_dict)
+        # self.class_one_freq_map = word_dict
+        #
+        # word_dict = dict()
+        # self.add_vector_to_dict(self.class_two_list_vector_form, word_dict)
+        # self.class_two_freq_map = word_dict
+
+        # self.json_format = self.convert_to_json(self.classes_directory[0], self.class_one_list_vector_form,
+        #                                         self.classes_directory[1], self.class_two_list_vector_form)
+        
+        
+            def convert_to_json(self, class_one_name, class_one_list, class_two_name, class_two_list):
+        data = {}
+
+        data[class_one_name] = {}
+        i = 0
+
+        for keys, values in class_one_list.items():
+            data[class_one_name][i] = dict()
+            data[class_one_name][i]["filename"] = keys
+            data[class_one_name][i]["word_vector"] = values
+            i += 1
+
+        data[class_two_name] = {}
+        i = 0
+        for keys, values in class_two_list.items():
+            data[class_two_name][i] = dict()
+            data[class_two_name][i]["filename"] = keys
+            data[class_two_name][i]["word_vector"] = values
+            i += 1
+
+
+        return data
